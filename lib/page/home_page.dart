@@ -1,3 +1,4 @@
+import 'package:bangun_datar_kelas_b/page/persegi_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,45 +18,42 @@ class HomePage extends StatelessWidget {
         children: [
           Row(
             children: [
-              Expanded(child: CustomMenu(imageAsset: "assets/persegi.png",title: "Persegi")),
-              Expanded(child: CustomMenu(imageAsset: "assets/persegi.png",title: "Persegi")),
-              Expanded(child: CustomMenu(imageAsset: "assets/persegi.png",title: "Persegi")),
+              Expanded(
+                  child: InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>PersegiPage()));
+                      },
+                      child: CustomMenu(
+                          imageAsset: "assets/persegi.png", title: "Persegi"))),
+              Expanded(
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PersegiPage()));
+                    },
+                      child: CustomMenu(
+                      imageAsset: "assets/persegi_panjang.jpg", title: "PersegiPanjang"))),
             ],
           ),
           Row(
             children: [
-              Expanded(child: CustomMenu(imageAsset: "assets/segitiga.png",title: "Segitiga")),
-              Expanded(child: CustomMenu(imageAsset: "assets/segitiga.png",title: "Segitiga")),
-              Expanded(child: CustomMenu(imageAsset: "assets/segitiga.png",title: "Segitiga")),
+              Expanded(
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PersegiPage()));
+                    },
+                    child: CustomMenu(
+                      imageAsset: "assets/segitiga.png", title:"Segitiga",
+                    ),
+                      )),
+              Expanded(
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PersegiPage()));
+                    },
+                      child: CustomMenu(
+                      imageAsset: "assets/lingkaran.png", title: "Lingkaran"))),
             ],
           ),
-          Row(
-            children: [
-              Expanded(child: CustomMenu(imageAsset: "assets/segi_lima.png",title: "Segilima")),
-              Expanded(child: CustomMenu(imageAsset: "assets/segi_lima.png",title: "Segilima")),
-              Expanded(child: CustomMenu(imageAsset: "assets/segi_lima.png",title: "Segilima")),
-            ],
-          ), Row(
-            children: [
-              Expanded(child: CustomMenu(imageAsset: "assets/segidelapan.png",title: "Segilima")),
-              Expanded(child: CustomMenu(imageAsset: "assets/segidelapan.png",title: "Segilima")),
-              Expanded(child: CustomMenu(imageAsset: "assets/segidelapan.png",title: "Segilima")),
-            ],
-          ), Row(
-            children: [
-              Expanded(child: CustomMenu(imageAsset: "assets/segienam.png",title: "Segilima")),
-              Expanded(child: CustomMenu(imageAsset: "assets/segienam.png",title: "Segilima")),
-              Expanded(child: CustomMenu(imageAsset: "assets/segienam.png",title: "Segilima")),
-
-            ],
-          ), Row(
-            children: [
-              Expanded(child: CustomMenu(imageAsset: "assets/segitiga.png",title: "Segilima")),
-              Expanded(child: CustomMenu(imageAsset: "assets/segitiga.png",title: "Segilima")),
-              Expanded(child: CustomMenu(imageAsset: "assets/segitiga.png",title: "Segilima")),
-
-            ],
-          )
         ],
       ),
     );
@@ -64,21 +62,29 @@ class HomePage extends StatelessWidget {
 
 class CustomMenu extends StatelessWidget {
   const CustomMenu({
-    super.key, required this.imageAsset, required this.title,
+    super.key,
+    required this.imageAsset,
+    required this.title,
   });
 
   final String imageAsset;
   final String title;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10,vertical : 8),
+        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
         color: Colors.deepPurple,
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
           children: [
-            Image.asset(imageAsset,width: 50, height: 50,),
-            Text(title, style: TextStyle(color: Colors.white),
+            Image.asset(
+              imageAsset,
+              height: 150,
+            ),
+            Text(
+              title,
+              style: TextStyle(color: Colors.white),
             ),
           ],
         ));
