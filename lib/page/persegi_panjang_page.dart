@@ -17,7 +17,7 @@ class PersegiPanjangPage extends StatelessWidget {
       body: Column(
         children: [
           Image.asset(
-            "asset/persegi panjang.jpg",
+            "assets/persegi_panjang.jpg",
             height: 150,
           ),
           Padding(
